@@ -24,8 +24,9 @@ def run_server():
 def recv_data(conn):
     message = ''
     while True:
-        message += conn.recv(32)
-        if not conn.recv(32):
+        buff = conn.recv(32)
+        message += buff
+        if not buff:
             return message
 
 
