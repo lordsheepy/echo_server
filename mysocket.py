@@ -14,7 +14,7 @@ def run_server():
 
     while True:  # endless loop to permit server to continue echo function
         conn, addr = server_socket.accept()
-        message = conn.recv(1024)
+        message = conn.recv(32)
         conn.sendall(message)
         conn.close()
 

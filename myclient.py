@@ -13,7 +13,7 @@ def start_client(message):
     client_socket.connect(('127.0.0.1', 50000))
     client_socket.sendall(message)
     client_socket.shutdown(socket.SHUT_WR)
-    response = client_socket.recv(1024)
+    response = client_socket.recv(32)
     client_socket.close()
     return response
 
