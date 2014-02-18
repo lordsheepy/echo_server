@@ -4,6 +4,7 @@
 
 import socket
 import sys
+import mysocket
 
 
 def start_client(message):
@@ -13,7 +14,7 @@ def start_client(message):
     client_socket.connect(('127.0.0.1', 50000))
     client_socket.sendall(message)
     client_socket.shutdown(socket.SHUT_WR)
-    response = client_socket.recv(32)
+    response = mysocket.recv_data(client_socket)
     client_socket.close()
     return response
 
