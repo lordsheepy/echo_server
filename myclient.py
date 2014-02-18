@@ -1,6 +1,9 @@
 #! usr/bin/env python
 
+"""Sends string to echo server with command line arg"""
+
 import socket
+import sys
 
 
 def start_client(message):
@@ -13,3 +16,8 @@ def start_client(message):
     response = client_socket.recv(1024)
     client_socket.close()
     return response
+
+
+if __name__ == '__main__':
+    message = sys.argv[1]  # takes commandline argument
+    print(start_client(message))
